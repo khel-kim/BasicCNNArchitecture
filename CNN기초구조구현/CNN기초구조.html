@@ -1,0 +1,1151 @@
+<!DOCTYPE html><html><head>
+      <title>CNN&#xAE30;&#xCD08;&#xAD6C;&#xC870;</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///C:\Users\KHEL_KIM\.atom\packages\markdown-preview-enhanced\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <style> 
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+ 
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview   ">
+      <p>LeNet-5, AlexNet, GoogLeNet<br>
+<br><br></p>
+<h2><center>  CNN &#xAE30;&#xCD08; &#xBD84;&#xB958;&#xAE30; &#xAD6C;&#xC870; &#xAD6C;&#xD604;&#xD558;&#xAE30;</center></h2>
+<br>
+<br>
+<p>&#xC774; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB294; LeNet-5, AlexNet, GoogLeNet&#xC744; &#xC9C1;&#xC811; &#xAD6C;&#xD604;&#xD558;&#xB294; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xAD6C;&#xD604;&#xD574;&#xBCF4;&#xB294; &#xAC83;&#xC758; &#xBAA9;&#xC801;&#xC740; &#xCD08;&#xC2EC;&#xC790; &#xC785;&#xC7A5;&#xC5D0;&#xC11C; &#xD074;&#xB798;&#xC2DD;&#xD55C; CNN &#xAD6C;&#xC870;&#xB4E4; &#xB354; &#xC798; &#xC774;&#xD574;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C; &#xC785;&#xB2C8;&#xB2E4;.</p>
+<ol>
+<li>&#xB370;&#xC774;&#xD130; &#xC14B;&#xC740; LeNet-5&#xB294; MNIST, AlexNet&#xACFC; GoogLeNet&#xC740; Kaggle&#xC758; Dogs vs. Cats&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>&#xC131;&#xB2A5; &#xD3C9;&#xAC00; &#xBC29;&#xBC95;&#xC740; &#xC815;&#xD655;&#xB3C4;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>&#xB7EC;&#xB2DD; &#xBAA8;&#xB378;&#xC740; LeNet-5, AlexNet, GoogLeNet&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>&#xB7EC;&#xB2DD; &#xC54C;&#xACE0;&#xB9AC;&#xC998;&#xC740; Adam&#xC744; &#xC4F0;&#xB3C4;&#xB85D; &#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ol>
+<p>&#xAE30;&#xBCF8; &#xC124;&#xC815;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>import numpy as np
+import os
+import matplotlib
+import matplotlib.pyplot as plt
+import pandas as pd
+import scipy.misc
+import tensorflow as tf
+import matplotlib.image as mpimg
+from sklearn.model_selection import train_test_split
+
+def reset_graph(seed=42):
+    tf.reset_default_graph()
+    tf.set_random_seed(seed)
+    np.random.seed(seed)
+
+matplotlib.rc(&apos;font&apos;, family=&apos;NanumBarunGothic&apos;)
+plt.rcParams[&apos;axes.unicode_minus&apos;] = False
+</code></pre><h2 class="mume-header" id="1-lenet-5">1. LeNet-5</h2>
+
+<p>LeNet-5&#xC740; MNIST &#xC22B;&#xC790; &#xC774;&#xBBF8;&#xC9C0; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. LeNet-5 &#xAD6C;&#xC870;&#xB294; &#xAC00;&#xC7A5; &#xB110;&#xB9AC; &#xC54C;&#xB824;&#xC9C4; CNN &#xAD6C;&#xC870;&#xB85C;&#xC11C; &#xC190;&#xAE00;&#xC528; &#xC22B;&#xC790; &#xC778;&#xC2DD;&#xC5D0; &#xB110;&#xB9AC; &#xC0AC;&#xC6A9;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 class="mume-header" id="lenet-5%EC%9D%98-%EA%B8%B0%EB%B3%B8-%EA%B5%AC%EC%A1%B0-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0">LeNet-5&#xC758; &#xAE30;&#xBCF8; &#xAD6C;&#xC870; &#xD655;&#xC778;&#xD558;&#xAE30;</h3>
+
+<table>
+<thead>
+<tr>
+<th>&#xCE35;</th>
+<th>&#xC885;&#xB958;</th>
+<th>&#xD2B9;&#xC131; &#xB9F5;</th>
+<th>&#xD06C;&#xAE30;</th>
+<th>&#xCEE4;&#xB110; &#xD06C;&#xAE30;</th>
+<th>&#xC2A4;&#xD2B8;&#xB77C;&#xC774;&#xB4DC;</th>
+<th>&#xD65C;&#xC131;&#xD654; &#xD568;&#xC218;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#xCD9C;&#xB825;</td>
+<td>&#xC644;&#xC804; &#xC5F0;&#xACB0;</td>
+<td>-</td>
+<td>10</td>
+<td>-</td>
+<td>-</td>
+<td>RBF</td>
+</tr>
+<tr>
+<td>F6</td>
+<td>&#xC644;&#xC804; &#xC5F0;&#xACB0;</td>
+<td>-</td>
+<td>84</td>
+<td>-</td>
+<td>-</td>
+<td>tanh</td>
+</tr>
+<tr>
+<td>C5</td>
+<td>&#xD569;&#xC131;&#xACF1;</td>
+<td>120</td>
+<td>1<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span> 1</td>
+<td>5<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span>5</td>
+<td>1</td>
+<td>tanh</td>
+</tr>
+<tr>
+<td>S4</td>
+<td>&#xD3C9;&#xADE0; &#xD480;&#xB9C1;</td>
+<td>16</td>
+<td>5<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span>5</td>
+<td>2<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span>2</td>
+<td>2</td>
+<td>tanh</td>
+</tr>
+<tr>
+<td>C3</td>
+<td>&#xD569;&#xC131;&#xACF1;</td>
+<td>16</td>
+<td>10<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span>10</td>
+<td>5<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span>5</td>
+<td>1</td>
+<td>tanh</td>
+</tr>
+<tr>
+<td>S2</td>
+<td>&#xD3C9;&#xADE0; &#xD480;&#xB9C1;</td>
+<td>6</td>
+<td>14<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span>14</td>
+<td>2<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span>2</td>
+<td>2</td>
+<td>tanh</td>
+</tr>
+<tr>
+<td>C1</td>
+<td>&#xD569;&#xC131;&#xACF1;</td>
+<td>6</td>
+<td>28<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span>28</td>
+<td>5<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span>5</td>
+<td>1</td>
+<td>tanh</td>
+</tr>
+<tr>
+<td>&#xC785;&#xB825;</td>
+<td>&#xC785;&#xB825;</td>
+<td>1</td>
+<td>32<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span>32</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>MNIST &#xC774;&#xBBF8;&#xC9C0;&#xB294; 28 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span> 28 &#xD53D;&#xC140;&#xC774;&#xC9C0;&#xB9CC; &#xC81C;&#xB85C; &#xD328;&#xB529;&#xB418;&#xC5B4; 32 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span> 32&#xAC00; &#xB418;&#xACE0; &#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xC5D0; &#xC8FC;&#xC785;&#xB418;&#xAE30; &#xC804;&#xC5D0; &#xC815;&#xADDC;&#xD654;&#xB429;&#xB2C8;&#xB2E4;. &#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xC758; &#xB098;&#xBA38;&#xC9C0; &#xBD80;&#xBD84;&#xC740; &#xD328;&#xB529;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>&#xD3C9;&#xADE0; &#xD480;&#xB9C1;&#xCE35;&#xC758; &#xAC01; &#xB274;&#xB7F0;&#xC740; &#xC785;&#xB825;&#xC758; &#xD3C9;&#xADE0;&#xC744; &#xACC4;&#xC0B0;&#xD55C; &#xB2E4;&#xC74C;, &#xADF8; &#xAC12;&#xC5D0; &#xD559;&#xC2B5;&#xB418;&#xB294; &#xACC4;&#xC22B;&#xAC12;&#xC744; &#xACF1;&#xD558;&#xACE0; &#xD559;&#xC2B5;&#xB418;&#xB294; &#xAC12;&#xC778; &#xD3B8;&#xD5A5;&#xC744; &#xB354;&#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0; &#xD65C;&#xC131;&#xD654; &#xD568;&#xC218;&#xB97C; &#xC801;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>C3&#xC5D0; &#xC788;&#xB294; &#xB300;&#xBD80;&#xBD84;&#xC758; &#xB274;&#xB7F0;&#xC740; S2&#xC758; 3&#xAC1C; &#xB610;&#xB294; 4&#xAC1C; &#xB9F5;&#xC5D0; &#xC788;&#xB294; &#xB274;&#xB7F0;&#xC5D0;&#xB9CC; &#xC5F0;&#xACB0;&#xB429;&#xB2C8;&#xB2E4;(&#xC774; &#xBD80;&#xBD84;&#xC740; &#xB098;&#xC911;&#xC5D0; &#xB354; &#xC815;&#xD655;&#xD558;&#xAC8C; &#xAD6C;&#xD604;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;).</li>
+</ul>
+<p>MNIST &#xB370;&#xC774;&#xD130;&#xB97C; &#xBD88;&#xB7EC;&#xC640; &#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>reset_graph()
+
+from tensorflow.examples.tutorials.mnist import input_data
+
+mnist = input_data.read_data_sets(&quot;MNIST_data&quot;, one_hot=True)
+
+x = tf.placeholder(&quot;float&quot;, shape=[None, 784])
+y_ = tf.placeholder(&quot;float&quot;, shape=[None, 10])
+
+x_image = tf.reshape(x, [-1, 28, 28, 1])
+</code></pre><h3 class="mume-header" id="lenet-5-%EA%B5%AC%EC%A1%B0-%EB%A7%8C%EB%93%A4%EA%B8%B0">LeNet-5 &#xAD6C;&#xC870; &#xB9CC;&#xB4E4;&#xAE30;</h3>
+
+<p>&#xAC00;&#xC911;&#xCE58;&#xB97C; &#xD45C;&#xC900;&#xD3B8;&#xCC28; 0.1&#xC744; &#xAC16;&#xB294; &#xB09C;&#xC218;&#xB85C; &#xCD08;&#xAE30;&#xD654;&#xD558;&#xB294; &#xD568;&#xC218;&#xC640; &#xBC14;&#xC774;&#xC5B4;&#xC2A4;&#xB97C; 0.1&#xB85C; &#xCD08;&#xAE30;&#xD654;&#xD558;&#xB294; &#xD568;&#xC218;&#xB97C; &#xC815;&#xC758;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>def weight_variable(shape):
+    initial = tf.truncated_normal(shape, stddev=0.1)
+    return tf.Variable(initial)
+
+def bias_variable(shape):
+    initial = tf.constant(0.1, shape=shape)
+    return tf.Variable(initial)
+</code></pre><p>stride&#xB294; 1&#xB85C; &#xD558;&#xACE0; &#xD328;&#xB529;&#xC740; 0&#xC73C;&#xB85C; &#xD558;&#xB294; &#xD569;&#xC131;&#xACF1;&#xCE35;&#xC744; &#xB9CC;&#xB4DC;&#xB294; &#xD568;&#xC218;&#xC640; 2 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span> 2 &#xD3C9;&#xADE0; &#xD480;&#xB9C1; &#xB808;&#xC774;&#xC5B4;&#xB97C; &#xC704;&#xD55C; &#xD568;&#xC218;&#xB97C; &#xC815;&#xC758;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>def conv2d(x, W, padding=&quot;VALID&quot;):
+    return tf.nn.conv2d(x, W, strides=[1,1,1,1], padding=padding)
+
+def avg_pool_2x2(x):
+    return tf.nn.avg_pool(x, ksize=[1,2,2,1], strides=[1,2,2,1], padding=&quot;VALID&quot;)
+</code></pre><p>&#xCCAB; &#xBC88;&#xC9F8; &#xD569;&#xC131;&#xACF1;&#xCE35;&#xC744; &#xB9CC;&#xB4E4;&#xAE30; &#xC704;&#xD574; &#xAC00;&#xC911;&#xCE58;&#xC640; &#xBC14;&#xC774;&#xC5B4;&#xC2A4; &#xD150;&#xC11C;&#xB97C; &#xB9CC;&#xB4E4;&#xACE0;, &#xD65C;&#xC131;&#xD654;&#xD568;&#xC218;&#xB294; tanh &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0; &#xD569;&#xC131;&#xACF1;&#xCE35; &#xB4A4;&#xC5D0; &#xD3C9;&#xADE0; &#xD480;&#xB9C1;&#xCE35;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>W_conv1 = weight_variable([5,5,1,6])
+  ## &#xC218;&#xC6A9;&#xC7A5; &#xB108;&#xBE44;, &#xC218;&#xC6A9;&#xC7A5; &#xB192;&#xC774;, &#xCEEC;&#xB7EC;, &#xD2B9;&#xC131; &#xB9F5; &#xAC1C;&#xC218;
+b_conv1 = bias_variable([6])
+
+h_conv1 = tf.nn.tanh(conv2d(x_image, W_conv1,padding=&quot;SAME&quot;) + b_conv1)
+h_pool1 = avg_pool_2x2(h_conv1)
+</code></pre><p>&#xB450; &#xBC88;&#xC9F8; &#xD569;&#xC131;&#xACF1;&#xCE35;&#xC744; &#xB9CC;&#xB4E4;&#xAE30; &#xC704;&#xD574; &#xAC00;&#xC911;&#xCE58;&#xC640; &#xBC14;&#xC774;&#xC5B4;&#xC2A4; &#xD150;&#xC11C;&#xB97C; &#xB9CC;&#xB4E4;&#xACE0;, &#xD65C;&#xC131;&#xD654;&#xD568;&#xC218;&#xB294; tanh &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0; &#xD569;&#xC131;&#xACF1;&#xCE35; &#xB4A4;&#xC5D0; &#xD3C9;&#xADE0; &#xD480;&#xB9C1;&#xCE35;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>W_conv2 = weight_variable([5,5,6,16]) ## &#xC218;&#xC6A9;&#xC7A5; &#xB108;&#xBE44;, &#xC218;&#xC6A9;&#xC7A5; &#xB192;&#xC774;, &#xCEEC;&#xB7EC;, &#xD2B9;&#xC131; &#xB9F5; &#xAC1C;&#xC218;
+b_conv2 = bias_variable([16])
+
+h_conv2 = tf.nn.tanh(conv2d(h_pool1, W_conv2) + b_conv2)
+h_pool2 = avg_pool_2x2(h_conv2)
+</code></pre><p>&#xC138; &#xBC88;&#xC9F8; &#xD569;&#xC131;&#xACF1;&#xCE35;&#xC744; &#xB9CC;&#xB4E4;&#xAE30; &#xC704;&#xD574; &#xAC00;&#xC911;&#xCE58;&#xC640; &#xBC14;&#xC774;&#xC5B4;&#xC2A4; &#xD150;&#xC11C;&#xB97C; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>W_conv3 = weight_variable([5,5,16,120]) ## &#xC218;&#xC6A9;&#xC7A5; &#xB108;&#xBE44;, &#xC218;&#xC6A9;&#xC7A5; &#xB192;&#xC774;, &#xCEEC;&#xB7EC;, &#xD2B9;&#xC131; &#xB9F5; &#xAC1C;&#xC218;
+b_conv3 = bias_variable([120])
+
+h_conv3 = tf.nn.tanh(conv2d(h_pool2, W_conv3) + b_conv3)
+h_conv3.get_shape()
+</code></pre><pre data-role="codeBlock" data-info class="language-"><code>  ## &#xACB0;&#xACFC;
+TensorShape([Dimension(None), Dimension(1), Dimension(1), Dimension(120)])
+</code></pre><p>RBF &#xCE35;&#xC5D0; &#xC5F0;&#xACB0;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC644;&#xC804;&#xC5F0;&#xACB0; &#xCE35;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xC804; &#xD569;&#xC131;&#xACF1;&#xCE35;&#xC758; &#xACB0;&#xACFC;&#xB97C; 1&#xCC28;&#xC6D0; &#xD150;&#xC11C;&#xB85C; &#xBCC0;&#xD658;&#xD558;&#xC5EC; tanh &#xD65C;&#xC131;&#xD654;&#xD568;&#xC218;&#xC5D0; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>W_fc1 = weight_variable([1 * 1 * 120, 84]) ## 84&#xB294; &#xB274;&#xB7F0; &#xAC1C;&#xC218;
+b_fc1 = bias_variable([84])
+
+h_conv3_flat = tf.reshape(h_conv3, [-1, 1 * 1 * 120])
+h_fc1 = tf.nn.tanh(tf.matmul(h_conv3_flat, W_fc1) + b_fc1)
+</code></pre><p>&#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C; RBF &#xCE35; &#xB808;&#xC774;&#xC5B4;&#xB97C; &#xCD94;&#xAC00;&#xD574;&#xC57C; &#xD558;&#xC9C0;&#xB9CC;, &#xC815;&#xD655;&#xD55C; RBF &#xD568;&#xC218;&#xC758; &#xD558;&#xC774;&#xD37C;&#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB97C; &#xAD6C;&#xCCB4;&#xC801;&#xC73C;&#xB85C; &#xC124;&#xC815;&#xD558;&#xAE30; &#xC5B4;&#xB824;&#xC6CC; Linear &#xD65C;&#xC131;&#xD654; &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>W_fc2 = weight_variable([84, 10])
+b_fc2 = bias_variable([10])
+
+logits = tf.matmul(h_fc1, W_fc2) + b_fc2
+</code></pre><p>&#xC774;&#xC81C; &#xBE44;&#xC6A9;&#xD568;&#xC218;&#xB97C; &#xC815;&#xC758;&#xD558;&#xACE0; &#xCD5C;&#xC801;&#xD654;&#xC54C;&#xACE0;&#xB9AC;&#xC998;, &#xD3C9;&#xAC00;&#xB97C; &#xC704;&#xD55C; &#xC5F0;&#xC0B0;&#xC744; &#xC815;&#xC758;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>cross_entropy = tf.nn.softmax_cross_entropy_with_logits_v2(labels=y_, logits=logits)
+loss_operation = tf.reduce_mean(cross_entropy)
+
+optimizer = tf.train.AdamOptimizer(learning_rate=0.001)
+train_step = optimizer.minimize(loss_operation)
+
+correct_prediction = tf.equal(tf.argmax(logits, 1), tf.argmax(y_, 1))
+accuracy = tf.reduce_mean(tf.cast(correct_prediction, &quot;float&quot;))
+</code></pre><p>&#xC774;&#xC81C; &#xD6C8;&#xB828;&#xC2DC;&#xCF1C;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>init = tf.global_variables_initializer()
+saver = tf.train.Saver()
+
+with tf.Session() as sess:
+    init.run()
+    for i in range(20000):
+        batch = mnist.train.next_batch(50)
+        if i % 1000 == 0:
+            train_accuracy = sess.run(accuracy, feed_dict={
+                x:batch[0], y_: batch[1]
+            })
+            print(&quot;step %d, training accuracy %g&quot; %(i, train_accuracy))
+        sess.run(train_step, feed_dict={x: batch[0], y_: batch[1]})
+
+    ## &#xCD5C;&#xC885;&#xACB0;&#xACFC;
+    print(&quot;test accuracy %g&quot; % sess.run(
+            accuracy, feed_dict={x: mnist.test.images, y_: mnist.test.labels}))
+
+    save_path = saver.save(sess, &quot;./cnn_lenet.ckpt&quot;)
+</code></pre><p><img src="./images/LeNet1.png" alt="1"></p>
+<p>&#xB9E4;&#xC6B0; &#xC815;&#xD655;&#xD558;&#xAC8C; &#xB9DE;&#xCD94;&#xB294; &#xBAA8;&#xC2B5;&#xC744; &#xBCFC;&#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h2 class="mume-header" id="2-alexnet">2. AlexNet</h2>
+
+<p>AlexNet&#xC740; &#xAC1C;&#xC640; &#xACE0;&#xC591;&#xC774; &#xC774;&#xBBF8;&#xC9C0; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. AlexNet &#xAD6C;&#xC870;&#xB294; 2012&#xB144; &#xC774;&#xBBF8;&#xC9C0;&#xB137; &#xB300;&#xD68C;&#xC5D0;&#xC11C; &#xD070; &#xCC28;&#xC774;&#xB85C; &#xC6B0;&#xC2B9;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774; &#xAD6C;&#xC870;&#xB294; &#xB354; &#xD06C;&#xACE0; &#xAE4A;&#xC744; &#xBFD0; LeNet-5&#xC640; &#xB9E4;&#xC6B0; &#xBE44;&#xC2B7;&#xD558;&#xBA70;, &#xCC98;&#xC74C;&#xC73C;&#xB85C; &#xD569;&#xC131;&#xACF1;&#xCE35; &#xC704;&#xC5D0; &#xD480;&#xB9C1;&#xCE35;&#xC744; &#xC313;&#xC9C0; &#xC54A;&#xACE0; &#xBC14;&#xB85C; &#xD569;&#xC131;&#xACF1;&#xCE35;&#xB07C;&#xB9AC; &#xC313;&#xC558;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC6D0;&#xB798;&#xB294; &#xC8FC;&#xC5B4;&#xC9C4; &#xC774;&#xBBF8;&#xC9C0;&#xB97C; &#xB79C;&#xB364;&#xD558;&#xAC8C; &#xC5EC;&#xB7EC; &#xAC04;&#xACA9;&#xC73C;&#xB85C; &#xC774;&#xB3D9;&#xD558;&#xAC70;&#xB098; &#xC218;&#xD3C9;&#xC73C;&#xB85C; &#xB4A4;&#xC9D1;&#xACE0; &#xC870;&#xBA85;&#xC744; &#xBC14;&#xAFB8;&#xB294; &#xC2DD;&#xC73C;&#xB85C; &#xB370;&#xC774;&#xD130; &#xC99D;&#xC2DD;&#xC744; &#xC218;&#xD589;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xC774; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC5D0;&#xC11C;&#xB294; &#xAD6C;&#xD604;&#xD558;&#xC9C0; &#xC54A;&#xC558;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 class="mume-header" id="alexnet%EC%9D%98-%EA%B8%B0%EB%B3%B8-%EA%B5%AC%EC%A1%B0-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0">AlexNet&#xC758; &#xAE30;&#xBCF8; &#xAD6C;&#xC870; &#xD655;&#xC778;&#xD558;&#xAE30;</h3>
+
+<table>
+<thead>
+<tr>
+<th>&#xCE35;</th>
+<th>&#xC885;&#xB958;</th>
+<th>&#xD2B9;&#xC131; &#xB9F5;</th>
+<th>&#xD06C;&#xAE30;</th>
+<th>&#xCEE4;&#xB110; &#xD06C;&#xAE30;</th>
+<th>&#xC2A4;&#xD2B8;&#xB77C;&#xC774;&#xB4DC;</th>
+<th>&#xD328;&#xB529;</th>
+<th>&#xD65C;&#xC131;&#xD654; &#xD568;&#xC218;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#xCD9C;&#xB825;</td>
+<td>&#xC644;&#xC804; &#xC5F0;&#xACB0;</td>
+<td>-</td>
+<td>1000</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>Softmax</td>
+</tr>
+<tr>
+<td>F9</td>
+<td>&#xC644;&#xC804; &#xC5F0;&#xACB0;</td>
+<td>-</td>
+<td>4096</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>ReLu</td>
+</tr>
+<tr>
+<td>F8</td>
+<td>&#xC644;&#xC804; &#xC5F0;&#xACB0;</td>
+<td>-</td>
+<td>4096</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>ReLu</td>
+</tr>
+<tr>
+<td>C7</td>
+<td>&#xD569;&#xC131;&#xACF1;</td>
+<td>256</td>
+<td>13<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span> 13</td>
+<td>3<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span>3</td>
+<td>1</td>
+<td>SAME</td>
+<td>ReLU</td>
+</tr>
+<tr>
+<td>C6</td>
+<td>&#xD569;&#xC131;&#xACF1;</td>
+<td>384</td>
+<td>13<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span> 13</td>
+<td>3<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span>3</td>
+<td>1</td>
+<td>SAME</td>
+<td>ReLU</td>
+</tr>
+<tr>
+<td>C5</td>
+<td>&#xD569;&#xC131;&#xACF1;</td>
+<td>384</td>
+<td>13<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span> 13</td>
+<td>3<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span>3</td>
+<td>1</td>
+<td>SAME</td>
+<td>ReLU</td>
+</tr>
+<tr>
+<td>S4</td>
+<td>&#xCD5C;&#xB300; &#xD480;&#xB9C1;</td>
+<td>256</td>
+<td>13<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span> 13</td>
+<td>3<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span>3</td>
+<td>2</td>
+<td>VALID</td>
+<td>-</td>
+</tr>
+<tr>
+<td>C3</td>
+<td>&#xD569;&#xC131;&#xACF1;</td>
+<td>256</td>
+<td>27<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span>27</td>
+<td>5<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span>5</td>
+<td>1</td>
+<td>SAME</td>
+<td>ReLU</td>
+</tr>
+<tr>
+<td>S2</td>
+<td>&#xCD5C;&#xB300; &#xD480;&#xB9C1;</td>
+<td>96</td>
+<td>27<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span>27</td>
+<td>3<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span>3</td>
+<td>2</td>
+<td>VALID</td>
+<td>-</td>
+</tr>
+<tr>
+<td>C1</td>
+<td>&#xD569;&#xC131;&#xACF1;</td>
+<td>96</td>
+<td>55<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span>55</td>
+<td>11<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span>11</td>
+<td>4</td>
+<td>SAME</td>
+<td>ReLU</td>
+</tr>
+<tr>
+<td>&#xC785;&#xB825;</td>
+<td>&#xC785;&#xB825;</td>
+<td>3(RGB)</td>
+<td>224<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span>224</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p>&#xACFC;&#xB300;&#xC801;&#xD569;&#xC744; &#xC904;&#xC774;&#xAE30; &#xC704;&#xD574; &#xB4DC;&#xB86D;&#xC544;&#xC6C3; &#xADDC;&#xC81C; &#xAE30;&#xBC95;&#xC744; &#xC0AC;&#xC6A9;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li>&#xD6C8;&#xB828;&#xD558;&#xB294; &#xB3D9;&#xC548; F8&#xACFC; F9&#xC758; &#xCD9C;&#xB825;&#xC5D0; &#xB4DC;&#xB86D;&#xC544;&#xC6C3;(50% &#xB4DC;&#xB78D;&#xC544;&#xC6C3; &#xBE44;&#xC728;)&#xC744; &#xC801;&#xC6A9;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<p>AlexNet&#xC740; C1&#xACFC; C3 &#xCE35;&#xC758; ReLU &#xB2E8;&#xACC4; &#xD6C4;&#xC5D0; &#xBC14;&#xB85C; LRN(local response normalization)&#xC774;&#xB77C; &#xBD80;&#xB974;&#xB294; &#xC815;&#xADDC;&#xD654; &#xB2E8;&#xACC4;&#xB97C; &#xC0AC;&#xC6A9;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774; &#xC815;&#xADDC;&#xD654;&#xB294; &#xAC00;&#xC7A5; &#xAC15;&#xD558;&#xAC8C; &#xD65C;&#xC131;&#xD654;&#xB41C; &#xB274;&#xB7F0;&#xC774; &#xB2E4;&#xB978; &#xD2B9;&#xC131; &#xB9F5;&#xC5D0; &#xC788;&#xB294; &#xAC19;&#xC740; &#xC704;&#xCE58;&#xC758; &#xB274;&#xB7F0;&#xC744; &#xC5B5;&#xC81C;&#xD558;&#xB294; &#xD615;&#xD0DC;&#xC785;&#xB2C8;&#xB2E4;(&#xC0DD;&#xBB3C;&#xD559;&#xC801; &#xB274;&#xB7F0;&#xC5D0;&#xC11C; &#xAD00;&#xCE21;&#xB41C; &#xBAA8;&#xC2B5;&#xC785;&#xB2C8;&#xB2E4;).</p>
+<p>AlexNet&#xC5D0;&#xC11C; LRN &#xD558;&#xC774;&#xD37C;&#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB294; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">r = 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>&#x3B1;</mi><mo>=</mo><mn>0.00002</mn></mrow><annotation encoding="application/x-tex">\alpha = 0.00002</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.0037em;">&#x3B1;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">2</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>&#x3B2;</mi><mo>=</mo><mn>0.75</mn></mrow><annotation encoding="application/x-tex">\beta = 0.75</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05278em;">&#x3B2;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">7</span><span class="mord">5</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k = 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>&#xB85C; &#xC124;&#xC815;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774; &#xB2E8;&#xACC4;&#xB294; &#xD150;&#xC11C;&#xD50C;&#xB85C;&#xC758; tf.nn.local_response_normalization( ) &#xC5F0;&#xC0B0;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xAD6C;&#xD604;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 class="mume-header" id="kaggle-dogs-vs-cats-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EC%B2%98%EB%A6%AC">Kaggle Dogs vs. Cats &#xB370;&#xC774;&#xD130; &#xC804;&#xCC98;&#xB9AC;</h3>
+
+<p>Dogs vs. Cats &#xB370;&#xC774;&#xD130;&#xC758; &#xACBD;&#xC6B0;, &#xC8FC;&#xC5B4;&#xC9C4; &#xB370;&#xC774;&#xD130;&#xAC00; &#xC774;&#xBBF8;&#xC9C0; &#xB370;&#xC774;&#xD130;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC804;&#xCC98;&#xB9AC;&#xAC00; &#xC870;&#xAE08; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>TRAIN_DIR = &apos;datasets/cat_dog/train&apos;
+
+train_image_file_names = [TRAIN_DIR + &apos;/&apos; + i for i in os.listdir(TRAIN_DIR)][12000:13000]
+</code></pre><p>&#xC81C; &#xCEF4;&#xD4E8;&#xD130;&#xC758; &#xACBD;&#xC6B0; &#xB9CE;&#xC740; &#xC774;&#xBBF8;&#xC9C0;&#xB97C; &#xCC98;&#xB9AC;&#xD558;&#xAE30;&#xC5D4; &#xC0AC;&#xC591;&#xC774; &#xBD80;&#xC871;&#xD558;&#xBBC0;&#xB85C;, train &#xB370;&#xC774;&#xD130;&#xC5D0;&#xC11C;&#xB294; 2000&#xAC1C;&#xC758; &#xB370;&#xC774;&#xD130;&#xB9CC; &#xAC00;&#xC838;&#xC624;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC8FC;&#xC5B4;&#xC9C4; &#xB370;&#xC774;&#xD130;&#xB97C; &#xD655;&#xC778;&#xD574;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>import matplotlib.image as mpimg
+
+data = [mpimg.imread(i) for i in train_image_file_names]
+
+width = []
+height = []
+for image in data:
+    h, w, d = np.shape(image)
+    width.append(w)
+    height.append(h)
+
+plt.plot(width, height, &apos;.r&apos;)
+plt.show()
+</code></pre><p><img src="./images/AlexNet1.png" alt="2"></p>
+<pre data-role="codeBlock" data-info class="language-"><code>print(&quot;number of images which have width over 500:&quot;, np.sum(np.array(width) &gt; 500))
+print(&quot;number of images which have width over 500:&quot;, np.sum(np.array(height) &gt; 500))
+</code></pre><pre data-role="codeBlock" data-info class="language-"><code>  ## &#xACB0;&#xACFC;
+number of images which have width over 500: 0
+number of images which have width over 500: 0
+</code></pre><p>&#xC804;&#xCCB4; &#xB370;&#xC774;&#xD130; &#xAE30;&#xC900;&#xC73C;&#xB85C;, &#xB192;&#xC774;&#xC640; &#xB108;&#xBE44;&#xAC00; 500&#xC744; &#xB118;&#xB294; &#xAC1D;&#xCCB4;&#xB294; 2&#xAC1C;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. 2 &#xAC1D;&#xCCB4;&#xB97C; &#xC9C0;&#xC6B0;&#xACE0;, &#xB098;&#xBA38;&#xC9C0; &#xC774;&#xBBF8;&#xC9C0;&#xC758; &#xC0AC;&#xC774;&#xC988;&#xB97C; (500,500)&#xC73C;&#xB85C; &#xB9CC;&#xB4E4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>for i in range(2):
+    tmp = np.argmax(np.array(width))
+    if width[tmp] &gt; 500:
+        data.pop(tmp)
+        width.pop(tmp)
+        height.pop(tmp)
+        train_image_file_names.pop(tmp)
+</code></pre><p>&#xC774;&#xC81C; &#xB370;&#xC774;&#xD130; &#xC804;&#xCC98;&#xB9AC;&#xAC00; &#xAC70;&#xC758; &#xB05D;&#xB0AC;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xC81C; &#xC774; &#xB370;&#xC774;&#xD130;&#xB4E4;&#xC744; numpy &#xBC30;&#xC5F4;&#xB85C; &#xB9CC;&#xB4E4;&#xACE0;, &#xC0AC;&#xC774;&#xC988;&#xB97C; &#xC904;&#xC774;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>def create_data(image_file_names, width=500,
+              height=500, final_width=214, final_height=214):
+    def resize_width_height(image, width=width,
+                height=width, final_width=final_width, final_height=final_height):
+        tmp = np.zeros((width,height,3))
+        tmp[:image.shape[0], :image.shape[1], :] = image
+        tmp = scipy.misc.imresize(tmp, (final_width,final_height))
+        tmp = tmp/ 255
+        return tmp.reshape(-1, final_width, final_height, 3)
+        ## batch, width, height, channel
+
+    data = np.zeros((1, final_width, final_height, 3))
+    for i in image_file_names:
+        tmp = mpimg.imread(i)
+        data = np.r_[data, resize_width_height(tmp)]
+    return data[1:,:,:,:]
+</code></pre><pre data-role="codeBlock" data-info class="language-"><code>train_data0 = create_data(train_image_file_names[:500])
+  ## train_image_file&#xC740; &#xC774;&#xBBF8;&#xC9C0; &#xC8FC;&#xC18C;&#xAC00; &#xC788;&#xB294; str&#xC785;&#xB2C8;&#xB2E4;.
+
+train_data1 = create_data(train_image_file_names[500:])
+  ## train_image_file&#xC740; &#xC774;&#xBBF8;&#xC9C0; &#xC8FC;&#xC18C;&#xAC00; &#xC788;&#xB294; str&#xC785;&#xB2C8;&#xB2E4;.
+
+train_data = np.r_[train_data0, train_data1]
+</code></pre><pre data-role="codeBlock" data-info class="language-"><code>labels = np.array([[1., 0.] if &apos;dog&apos; in name[23:]
+        else [0., 1.] for name in train_image_file_names])
+</code></pre><pre data-role="codeBlock" data-info class="language-"><code>train, test, train_labels, test_labels = train_test_split(train_data, lables,
+      0.2, random_state=42)
+</code></pre><p>&#xC644;&#xB8CC;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xC81C; &#xC774; &#xB370;&#xC774;&#xD130;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; AlexNet&#xC744; &#xD6C8;&#xB828;&#xC2DC;&#xCF1C;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 class="mume-header" id="alexnet-%EA%B5%AC%EC%A1%B0-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0">AlexNet &#xAD6C;&#xC870; &#xAD6C;&#xC131;&#xD558;&#xAE30;</h3>
+
+<pre data-role="codeBlock" data-info class="language-"><code>reset_graph()
+
+X_image = tf.placeholder(&quot;float&quot;, shape=[None, 214, 214, 3])
+y = tf.placeholder(&quot;float&quot;, shape=[None, 2])
+</code></pre><p>&#xAC00;&#xC911;&#xCE58;&#xB97C; &#xD45C;&#xC900;&#xD3B8;&#xCC28; 0.1&#xC744; &#xAC16;&#xB294; &#xB09C;&#xC218;&#xB85C; &#xCD08;&#xAE30;&#xD654;&#xD558;&#xB294; &#xD568;&#xC218;&#xC640; &#xBC14;&#xC774;&#xC5B4;&#xC2A4;&#xB97C; 0.1&#xB85C; &#xCD08;&#xAE30;&#xD654;&#xD558;&#xB294; &#xD568;&#xC218;&#xB97C; &#xC815;&#xC758;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>def weight_variable(shape):
+    initial = tf.truncated_normal(shape, stddev=0.1)
+    return tf.Variable(initial)
+
+def bias_variable(shape):
+    initial = tf.constant(0.1, shape=shape)
+    return tf.Variable(initial)
+</code></pre><p>stride&#xB294; 1&#xB85C; &#xD558;&#xACE0; &#xD328;&#xB529;&#xC740; 0&#xC73C;&#xB85C; &#xD558;&#xB294; &#xD569;&#xC131;&#xACF1;&#xCE35;&#xC744; &#xB9CC;&#xB4DC;&#xB294; &#xD568;&#xC218;&#xC640; 2 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span> 2 &#xCD5C;&#xB300; &#xD480;&#xB9C1; &#xB808;&#xC774;&#xC5B4;&#xB97C; &#xC704;&#xD55C; &#xD568;&#xC218;&#xB97C; &#xC815;&#xC758;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>def conv2d(x, W, strides=[1,1,1,1], padding=&quot;SAME&quot;):
+    return tf.nn.conv2d(x, W, strides=strides, padding=padding)
+
+def max_pool_3x3(x):
+    return tf.nn.max_pool(x, ksize=[1,3,3,1], strides=[1,2,2,1], padding=&quot;VALID&quot;)
+</code></pre><p>&#xCCAB; &#xBC88;&#xC9F8; &#xD569;&#xC131;&#xACF1;&#xCE35;&#xC744; &#xB9CC;&#xB4E4;&#xAE30; &#xC704;&#xD574; &#xAC00;&#xC911;&#xCE58;&#xC640; &#xBC14;&#xC774;&#xC5B4;&#xC2A4; &#xD150;&#xC11C;&#xB97C; &#xB9CC;&#xB4E4;&#xACE0;, &#xD65C;&#xC131;&#xD654;&#xD568;&#xC218;&#xB294; ReLU &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0; &#xD569;&#xC131;&#xACF1;&#xCE35; &#xB4A4;&#xC5D0; &#xCD5C;&#xB300; &#xD480;&#xB9C1;&#xCE35;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>W_conv1 = weight_variable([11,11,3,96]) ## &#xC218;&#xC6A9;&#xC7A5; &#xB108;&#xBE44;, &#xC218;&#xC6A9;&#xC7A5; &#xB192;&#xC774;, &#xCEEC;&#xB7EC;, &#xD2B9;&#xC131; &#xB9F5; &#xAC1C;&#xC218;
+b_conv1 = bias_variable([96])
+
+h_conv1 = tf.nn.relu(conv2d(X_image, W_conv1, [1,4,4,1]) + b_conv1)
+
+lrn_conv1 = tf.nn.lrn(h_conv1, depth_radius=2, bias=1,
+                          alpha=0.00002, beta=0.75)
+
+h_pool1 = max_pool_3x3(lrn_conv1)
+</code></pre><p>&#xB450; &#xBC88;&#xC9F8; &#xD569;&#xC131;&#xACF1;&#xCE35;&#xC744; &#xB9CC;&#xB4E4;&#xAE30; &#xC704;&#xD574; &#xAC00;&#xC911;&#xCE58;&#xC640; &#xBC14;&#xC774;&#xC5B4;&#xC2A4; &#xD150;&#xC11C;&#xB97C; &#xB9CC;&#xB4E4;&#xACE0;, &#xD65C;&#xC131;&#xD654;&#xD568;&#xC218;&#xB294; ReLU &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0; &#xD569;&#xC131;&#xACF1;&#xCE35; &#xB4A4;&#xC5D0; &#xCD5C;&#xB300; &#xD480;&#xB9C1;&#xCE35;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>W_conv2 = weight_variable([5,5,96,256]) ## &#xC218;&#xC6A9;&#xC7A5; &#xB108;&#xBE44;, &#xC218;&#xC6A9;&#xC7A5; &#xB192;&#xC774;, &#xCEEC;&#xB7EC;, &#xD2B9;&#xC131; &#xB9F5; &#xAC1C;&#xC218;
+b_conv2 = bias_variable([256])
+
+h_conv2 = tf.nn.relu(conv2d(h_pool1, W_conv2) + b_conv2)
+
+lrn_conv2 = tf.nn.lrn(h_conv2, depth_radius=2, bias=1,
+                          alpha=0.00002, beta=0.75)
+
+h_pool2 = max_pool_3x3(lrn_conv2)
+</code></pre><p>&#xC138; &#xBC88;&#xC9F8; &#xD569;&#xC131;&#xACF1;&#xCE35;&#xBD80;&#xD130; &#xB2E4;&#xC12F; &#xBC88;&#xC9F8; &#xD569;&#xC131;&#xACF1;&#xCE35;&#xC744; &#xC313;&#xC544;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. &#xD65C;&#xC131;&#xD654;&#xD568;&#xC218;&#xB294; ReLU &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>  ## &#xC138; &#xBC88;&#xC9F8;
+W_conv3 = weight_variable([3,3,256,384]) ## &#xC218;&#xC6A9;&#xC7A5; &#xB108;&#xBE44;, &#xC218;&#xC6A9;&#xC7A5; &#xB192;&#xC774;, &#xCEEC;&#xB7EC;, &#xD2B9;&#xC131; &#xB9F5; &#xAC1C;&#xC218;
+b_conv3 = bias_variable([384])
+
+h_conv3 = tf.nn.relu(conv2d(h_pool2, W_conv3) + b_conv3)
+
+  ## &#xB124; &#xBC88;&#xC9F8;
+W_conv4 = weight_variable([3,3,384,384]) ## &#xC218;&#xC6A9;&#xC7A5; &#xB108;&#xBE44;, &#xC218;&#xC6A9;&#xC7A5; &#xB192;&#xC774;, &#xCEEC;&#xB7EC;, &#xD2B9;&#xC131; &#xB9F5; &#xAC1C;&#xC218;
+b_conv4 = bias_variable([384])
+
+h_conv4 = tf.nn.relu(conv2d(h_conv3, W_conv4) + b_conv4)
+
+  ## &#xB2E4;&#xC12F; &#xBC88;&#xC9F8;
+W_conv5 = weight_variable([3,3,384,256]) ## &#xC218;&#xC6A9;&#xC7A5; &#xB108;&#xBE44;, &#xC218;&#xC6A9;&#xC7A5; &#xB192;&#xC774;, &#xCEEC;&#xB7EC;, &#xD2B9;&#xC131; &#xB9F5; &#xAC1C;&#xC218;
+b_conv5 = bias_variable([256])
+
+h_conv5 = tf.nn.relu(conv2d(h_conv4, W_conv5) + b_conv5)
+h_conv5.get_shape()
+</code></pre><pre data-role="codeBlock" data-info class="language-"><code>  ## &#xACB0;&#xACFC;
+TensorShape([Dimension(None), Dimension(12), Dimension(12), Dimension(256)])
+</code></pre><p>ReLU &#xC644;&#xC804; &#xC5F0;&#xACB0; &#xCE35;&#xC744; &#xB450; &#xBC88; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>W_fc1 = weight_variable([12 * 12 * 256, 4096]) ## 4096&#xB294; &#xB274;&#xB7F0; &#xAC1C;&#xC218;
+b_fc1 = bias_variable([4096])
+
+h_conv5_flat = tf.reshape(h_conv5, [-1, 12 * 12 * 256])
+h_fc1 = tf.nn.relu(tf.matmul(h_conv5_flat, W_fc1) + b_fc1)
+
+keep_prob = tf.placeholder(&quot;float&quot;)
+h_fc1_drop = tf.nn.dropout(h_fc1, keep_prob)
+
+h_fc1_drop.get_shape()
+</code></pre><pre data-role="codeBlock" data-info class="language-"><code>  ## &#xACB0;&#xACFC;
+TensorShape([Dimension(None), Dimension(4096)])
+</code></pre><pre data-role="codeBlock" data-info class="language-"><code>W_fc2 = weight_variable([4096, 4096]) ## 4096&#xB294; &#xB274;&#xB7F0; &#xAC1C;&#xC218;
+b_fc2 = bias_variable([4096])
+
+h_fc2 = tf.nn.relu(tf.matmul(h_fc1, W_fc2) + b_fc2)
+
+h_fc2_drop = tf.nn.dropout(h_fc2, keep_prob)
+
+h_fc2_drop.get_shape()
+</code></pre><pre data-role="codeBlock" data-info class="language-"><code>  ## &#xACB0;&#xACFC;
+TensorShape([Dimension(None), Dimension(4096)])
+</code></pre><p>Softmax &#xD65C;&#xC131;&#xD654; &#xD568;&#xC218;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB294; &#xCD9C;&#xB825;&#xCE35;&#xC744; &#xB9CC;&#xB4E4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>W_fc3 = weight_variable([4096, 2])
+b_fc3 = bias_variable([2])
+
+k = tf.matmul(h_fc2_drop, W_fc3) + b_fc3
+y_conv = tf.nn.softmax(k)
+</code></pre><h5 class="mume-header" id="%EC%A0%9C%EA%B0%80-%EC%93%B0%EB%8A%94-gpu%EC%97%90%EC%84%9C%EB%8A%94-oom-%EC%97%90%EB%9F%AC%EA%B0%80-%EB%AC%B8%EC%A0%9C%EA%B0%80-%EB%90%98%EC%96%B4-%EB%89%B4%EB%9F%B0-%EA%B0%9C%EC%88%98%EB%A5%BC-%EC%A4%84%EC%97%AC%EC%95%BC-%ED%96%88%EC%8A%B5%EB%8B%88%EB%8B%A4">&#xC81C;&#xAC00; &#xC4F0;&#xB294; GPU&#xC5D0;&#xC11C;&#xB294; OOM &#xC5D0;&#xB7EC;&#xAC00; &#xBB38;&#xC81C;&#xAC00; &#xB418;&#xC5B4;, &#xB274;&#xB7F0; &#xAC1C;&#xC218;&#xB97C; &#xC904;&#xC5EC;&#xC57C; &#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.</h5>
+
+<pre data-role="codeBlock" data-info class="language-"><code>W_fc1 = weight_variable([12 * 12 * 256, 300]) ## 300&#xC740; &#xB274;&#xB7F0; &#xAC1C;&#xC218;
+b_fc1 = bias_variable([300])
+
+h_conv5_flat = tf.reshape(h_conv5, [-1, 12 * 12 * 256])
+h_fc1 = tf.nn.relu(tf.matmul(h_conv5_flat, W_fc1) + b_fc1)
+
+keep_prob = tf.placeholder(&quot;float&quot;)
+h_fc1_drop = tf.nn.dropout(h_fc1, keep_prob)
+
+W_fc2 = weight_variable([200, 200]) ## 200&#xC740; &#xB274;&#xB7F0; &#xAC1C;&#xC218;
+b_fc2 = bias_variable([200])
+
+h_fc2 = tf.nn.relu(tf.matmul(h_fc1, W_fc2) + b_fc2)
+
+h_fc2_drop = tf.nn.dropout(h_fc2, keep_prob)
+
+W_fc3 = weight_variable([200, 2])
+b_fc3 = bias_variable([2])
+
+k = tf.matmul(h_fc2_drop, W_fc3) + b_fc3
+y_conv = tf.nn.softmax(k)
+</code></pre><h4 class="mume-header" id="%EB%8B%A4%EC%8B%9C-%EB%8F%8C%EC%95%84%EC%99%80%EC%84%9C">&#xB2E4;&#xC2DC; &#xB3CC;&#xC544;&#xC640;&#xC11C;...</h4>
+
+<p>&#xC190;&#xC2E4;&#xD568;&#xC218;&#xB294; cross entropy&#xB85C; &#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>xentropy = tf.nn.softmax_cross_entropy_with_logits(
+        labels=y, logits=k)
+loss = tf.reduce_mean(xentropy, name=&quot;loss&quot;)
+</code></pre><p>&#xB7EC;&#xB2DD; &#xC54C;&#xACE0;&#xB9AC;&#xC998;&#xC744; &#xC815;&#xC758;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>optimizer = tf.train.AdamOptimizer(learning_rate=0.001)
+train_step = optimizer.minimize(loss)
+</code></pre><p>&#xC774;&#xC81C; &#xC815;&#xD655;&#xB3C4; &#xD568;&#xC218;&#xB97C; &#xC815;&#xC758;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>correct_prediction = tf.equal(tf.argmax(y_conv, 1), tf.argmax(y, 1))
+accuracy = tf.reduce_mean(tf.cast(correct_prediction, &quot;float&quot;))
+</code></pre><p>&#xC774;&#xC81C; &#xC2E0;&#xACBD;&#xB9DD;&#xC744; &#xD6C8;&#xB828;&#xC2DC;&#xCF1C;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>def shuffle_batch(X, y, batch_size):
+    rnd_idx = np.random.permutation(len(X))
+    n_batches = len(X) // batch_size
+    for batch_idx in np.array_split(rnd_idx, n_batches):
+        X_batch, y_batch = X[batch_idx], y[batch_idx]
+        yield X_batch, y_batch
+</code></pre><pre data-role="codeBlock" data-info class="language-"><code>init = tf.global_variables_initializer()
+saver = tf.train.Saver()
+
+n_epochs = 300
+batch_size = 256
+
+with tf.Session() as sess:
+    init.run()
+
+    for epoch in range(n_epochs):
+        num = 0
+        for X_batch, y_batch in shuffle_batch(train, train_labels, batch_size):
+            sess.run(train_step, feed_dict={X_image: X_batch, y: y_batch, keep_prob: 0.5})
+        if epoch % 10 == 0:
+            acc_batch = accuracy.eval(feed_dict={X_image: train,
+                  y: train_labels, keep_prob: 0.5})
+            print(&apos;epoch&apos;, epoch, &quot;&#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;:&quot;, acc_batch)        
+
+    save_path = saver.save(sess, &quot;./cnn_alexnet.ckpt&quot;)
+</code></pre><pre data-role="codeBlock" data-info class="language-"><code>  ## &#xACB0;&#xACFC;
+  epoch 0 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.518797
+  epoch 10 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.5300752
+  epoch 20 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.49624062
+  epoch 30 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.5714286
+  epoch 40 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.56766915
+  epoch 50 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.5488722
+  epoch 60 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.50751877
+  epoch 70 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.5488722
+  epoch 80 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.5112782
+  epoch 90 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.5150376
+  epoch 100 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.5
+  epoch 110 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.5263158
+  epoch 120 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.5263158
+  epoch 130 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.5488722
+  epoch 140 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.575188
+  epoch 150 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.5488722
+  epoch 160 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.56390977
+  epoch 170 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.5601504
+  epoch 180 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.53759396
+  epoch 190 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.5263158
+  epoch 200 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.50751877
+  epoch 210 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.5601504
+  epoch 220 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.5150376
+  epoch 230 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.5150376
+  epoch 240 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.52255636
+  epoch 250 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.53759396
+  epoch 260 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.56766915
+  epoch 270 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.5112782
+  epoch 280 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.5451128
+  epoch 290 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.518797
+</code></pre><pre data-role="codeBlock" data-info class="language-"><code>with tf.Session() as sess:
+    saver.restore(sess, &apos;./cnn_alexnet.ckpt&apos;)
+    print(&apos;test accuracy %g&apos; % sess.run(accuracy,feed_dict={X_image: test,
+        y:test_labels, keep_prob: 1.}))
+</code></pre><pre data-role="codeBlock" data-info class="language-"><code>  ## &#xACB0;&#xACFC;
+test accuracy 0.51
+</code></pre><p>&#xACB0;&#xACFC;&#xAC00; &#xC88B;&#xAC8C; &#xB098;&#xC624;&#xC9C0;&#xB294; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC544;&#xB9C8; &#xB4DC;&#xB78D;&#xC544;&#xC6C3; &#xCE35;&#xC774; 2&#xAC1C; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xAC01; &#xAC00;&#xC911;&#xCE58;&#xB4E4;&#xC774; &#xC801;&#xC808;&#xD558;&#xAC8C; &#xD6C8;&#xB828;&#xB418;&#xC9C0; &#xBABB;&#xD55C; &#xAC83; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;. &#xD639;&#xC740; &#xB370;&#xC774;&#xD130;&#xAC00; 2000 * 0.8&#xAC1C; &#xBC16;&#xC5D0; &#xC5C6;&#xC5B4;&#xC11C; &#xD6C8;&#xB828;&#xC774; &#xC798;&#xB418;&#xC9C0; &#xBABB;&#xD588;&#xC744; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h2 class="mume-header" id="3-googlenet">3. GoogLeNet</h2>
+
+<p>GoogLeNet&#xC758; &#xAC00;&#xC7A5; &#xD070; &#xD2B9;&#xC9D5;&#xC740; &#xC778;&#xC149;&#xC158; &#xBAA8;&#xB4C8;&#xC774;&#xB77C;&#xB294; &#xC11C;&#xBE0C; &#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB2E4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;. GoogLeNet&#xC740; &#xC774;&#xC804; &#xAD6C;&#xC870;&#xB4E4;&#xBCF4;&#xB2E4; &#xD6E8;&#xC52C; &#xD6A8;&#xACFC;&#xC801;&#xC73C;&#xB85C; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. &#xC2E4;&#xC81C;&#xB85C; GoogLeNet&#xC740; AlexNet&#xBCF4;&#xB2E4; 10&#xBC30;&#xB098; &#xC801;&#xC740; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB97C; &#xAC00;&#xC9D1;&#xB2C8;&#xB2E4;.</p>
+<h3 class="mume-header" id="googlenet%EC%9D%98-%EA%B8%B0%EB%B3%B8-%EA%B5%AC%EC%A1%B0-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0">GoogLeNet&#xC758; &#xAE30;&#xBCF8; &#xAD6C;&#xC870; &#xD655;&#xC778;&#xD558;&#xAE30;</h3>
+
+<p>&#xC778;&#xC149;&#xC158; &#xBAA8;&#xB4C8;&#xC758; &#xAD6C;&#xC870;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><img src="./images/Ch13fig13.png" alt="a"></p>
+<p>&#xC5EC;&#xAE30;&#xC11C; 3<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span>3 + 1(S)&#xB294; 3<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span>3 &#xCEE4;&#xB110;, &#xC2A4;&#xD2B8;&#xB77C;&#xC774;&#xB4DC; 1, SAME &#xD328;&#xB529;&#xC744; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;&#xB294; &#xB73B;&#xC785;&#xB2C8;&#xB2E4;. &#xCC98;&#xC74C; &#xC2E0;&#xD638;&#xAC00; &#xBCF5;&#xC0AC;&#xB418;&#xC5B4; &#xB124; &#xAC1C;&#xC758; &#xB2E4;&#xB978; &#xCE35;&#xC5D0; &#xC8FC;&#xC785;&#xB429;&#xB2C8;&#xB2E4;. &#xBAA8;&#xB4E0; &#xD569;&#xC131;&#xACF1;&#xCE35;&#xC740; ReLU &#xD65C;&#xC131;&#xD654; &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. &#xB450; &#xBC88;&#xC9F8; &#xD569;&#xC131;&#xACF1;&#xCE35;&#xC740; &#xAC01;&#xAE30; &#xB2E4;&#xB978; &#xCEE4;&#xB110; &#xD06C;&#xAE30;(1 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span> 1, 3<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span> 3, 5<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span> 5)&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xB2E4;&#xB978; &#xD06C;&#xAE30;&#xC758; &#xD328;&#xD134;&#xC744; &#xC7A1;&#xC2B5;&#xB2C8;&#xB2E4;. &#xBAA8;&#xB4E0; &#xCE35;&#xC740; &#xC2A4;&#xD2B8;&#xB77C;&#xC774;&#xB4DC; 1&#xACFC; SAME &#xD328;&#xB529;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBBC0;&#xB85C; &#xCD9C;&#xB825;&#xC758; &#xB192;&#xC774;&#xC640; &#xB108;&#xBE44;&#xAC00; &#xBAA8;&#xB450; &#xC785;&#xB825;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774; &#xB2E4;&#xC74C; &#xCD9C;&#xB825;&#xC744; &#xAE4A;&#xC774; &#xC5F0;&#xACB0; &#xCE35;(Depth Concat Layer)&#xC5D0;&#xC11C; &#xD2B9;&#xC131; &#xB9F5; &#xC313;&#xB4EF;&#xC774; &#xC313;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774; &#xC5F0;&#xACB0; &#xCE35;&#xC740; &#xD150;&#xC11C;&#xD50C;&#xB85C;&#xC758; axis=3 &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB85C; tf.concat( ) &#xC5F0;&#xC0B0;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xAD6C;&#xD604;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC778;&#xC149;&#xC158; &#xBAA8;&#xB4C8;&#xC5D0;&#xC11C; 1 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span> 1 &#xCEE4;&#xB110;&#xC758; &#xD569;&#xC131;&#xACF1;&#xCE35;&#xC740; &#xB450; &#xAC1C;&#xC758; &#xBAA9;&#xC801;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li>&#xC785;&#xB825;&#xC758; &#xCC44;&#xB110;&#xBCF4;&#xB2E4; &#xB354; &#xC801;&#xC740; &#xD2B9;&#xC131; &#xB9F5;&#xC744; &#xCD9C;&#xB825;&#xD569;&#xB2C8;&#xB2E4;. &#xCC28;&#xC6D0;&#xC744; &#xC904;&#xC774;&#xB294; &#xD6A8;&#xACFC;&#xB97C; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>&#xD569;&#xC131;&#xACF1;&#xCE35;&#xC758; &#xC30D;([1 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span> 1, 3 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span> 3]&#xACFC; [1 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span> 1, 5 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span> 5])&#xC774; &#xBCF5;&#xC7A1;&#xD55C; &#xD328;&#xD134;&#xC744; &#xAC10;&#xC9C0;&#xD560; &#xC218; &#xC788;&#xB294; &#xD55C; &#xAC1C;&#xC758; &#xD569;&#xC131;&#xACF1;&#xCE35;&#xCC98;&#xB7FC; &#xC791;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<p>Note.<br>
+&#xAC01; &#xD569;&#xC11D;&#xACF1;&#xCE35;&#xC758; &#xD569;&#xC131;&#xACF1; &#xCEE4;&#xB110;&#xC758; &#xC218;&#xB294; &#xD558;&#xC774;&#xD37C;&#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xC785;&#xB2C8;&#xB2E4;. &#xC778;&#xC149;&#xC158; &#xBAA8;&#xB4C8;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xBA74; 6&#xAC1C;&#xC758; &#xD558;&#xC774;&#xD37C;&#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB97C; &#xC870;&#xC728;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774;&#xC81C; GoogLeNet CNN&#xC758; &#xAD6C;&#xC870;&#xB97C; &#xC0B4;&#xD3B4;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><img src="./images/Ch13fig14.png" alt="a"></p>
+<ul>
+<li>&#xD569;&#xC131;&#xACF1;&#xCE35;&#xACFC; &#xD480;&#xB9C1;&#xCE35;&#xC5D0;&#xC11C; &#xCD9C;&#xB825;&#xB418;&#xB294; &#xD2B9;&#xC131; &#xB9F5;&#xC758; &#xC218;&#xB294; &#xC55E;&#xC5D0; &#xC788;&#xB294; &#xC22B;&#xC790;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>&#xC778;&#xC149;&#xC158; &#xBAA8;&#xB4C8;&#xC5D0; &#xC788;&#xB294; &#xC22B;&#xC790;&#xB294; &#xD569;&#xC131;&#xACF1;&#xCE35;&#xC5D0;&#xC11C; &#xCD9C;&#xB825;&#xD558;&#xB294; &#xD2B9;&#xC131; &#xB9F5;&#xC758; &#xC218;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>&#xD569;&#xC131;&#xACF1;&#xCE35;&#xC740; ReLU &#xD65C;&#xC131;&#xD654; &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<p>&#xC774;&#xC81C; &#xC774; &#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xB97C; &#xC0B4;&#xD3B4;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li>&#xCC98;&#xC74C; &#xB450; &#xCE35;&#xC740; &#xACC4;&#xC0B0;&#xC758; &#xC591;&#xC744; &#xC904;&#xC774;&#xAE30; &#xC704;&#xD574; &#xB9CC;&#xB4E0; &#xCE35;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>LRN &#xCE35;&#xC740; &#xC5EC;&#xAE30;&#xC11C;&#xB3C4; &#xC4F0;&#xC785;&#xB2C8;&#xB2E4;(&#xB2E4;&#xC591;&#xD55C; &#xD2B9;&#xC131;&#xC744; &#xD559;&#xC2B5;&#xD558;&#xB3C4;&#xB85D; &#xD569;&#xB2C8;&#xB2E4;).</li>
+<li>&#xC774;&#xC5B4;&#xC9C0;&#xB294; &#xB450; &#xAC1C;&#xC758; &#xD569;&#xC131;&#xACF1;&#xCE35;&#xC740; &#xBCD1;&#xBAA9;&#xCE35;&#xCC98;&#xB7FC; &#xC791;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;(&#xCC28;&#xC6D0;&#xC744; &#xC904;&#xC778;&#xB2E4;&#xB294; &#xC774;&#xC57C;&#xAE30;&#xC785;&#xB2C8;&#xB2E4;).</li>
+<li>&#xB2E4;&#xC2DC; &#xD55C;&#xBC88; LRN &#xCE35;&#xC744; &#xC501;&#xB2C8;&#xB2E4;.</li>
+<li>&#xADF8;&#xB2E4;&#xC74C; &#xCD5C;&#xB300; &#xD480;&#xB9C1;&#xCE35;&#xC774; &#xC774;&#xBBF8;&#xC9C0;&#xC758; &#xB192;&#xC774;&#xC640; &#xB108;&#xBE44;&#xB97C; &#xC904;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>9&#xAC1C;&#xC758; &#xC778;&#xC149;&#xC158; &#xBAA8;&#xB4C8;&#xC774; &#xC774;&#xC5B4;&#xC9C0;&#xACE0;, &#xCC28;&#xC6D0; &#xAC10;&#xC18C;&#xC640; &#xC18D; &#xB3C4; &#xD5A5;&#xC0C1;&#xC744; &#xC704;&#xD574; &#xCD5C;&#xB300; &#xD480;&#xB9C1;&#xCE35;&#xC744; &#xBA87;&#xAC1C; &#xB123;&#xC5B4; &#xB193;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>&#xADF8; &#xB2E4;&#xC74C;&#xC5D0; &#xD3C9;&#xADE0; &#xD3F4;&#xB9C1;&#xCE35;&#xC774; &#xD2B9;&#xC131; &#xB9F4; &#xD06C;&#xAE30;&#xC758; &#xCEE4;&#xB110;&#xC744; VALID &#xD328;&#xB529;&#xC73C;&#xB85C; &#xC801;&#xC6A9;&#xD574; 1 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span> 1 &#xD2B9;&#xC131; &#xB9F5;&#xC744; &#xCD9C;&#xB825;&#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xB7F0; &#xC804;&#xB7B5;&#xC744; &#xC804;&#xC5ED; &#xD3C9;&#xADE0; &#xD3F4;&#xB9C1;&#xC774;&#xB77C;&#xACE0; &#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xCE35;&#xC740; CNN &#xC704;&#xC5D0; &#xC5EC;&#xB7EC; &#xAC1C;&#xC758; &#xC644;&#xC804; &#xC5F0;&#xACB0; &#xCE35;&#xC744; &#xB193;&#xB294; &#xAC83;&#xC744; &#xBD88;&#xD544;&#xC694;&#xD558;&#xAC8C; &#xB9CC;&#xB4E6;&#xC73C;&#xB85C; &#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xC758; &#xD30C;&#xB77C;&#xBBF8;&#xD130; &#xC218;&#xB97C; &#xB9CE;&#xC774; &#xC904;&#xC5EC;&#xC8FC;&#xACE0; &#xACFC;&#xB300;&#xC801;&#xD569;&#xC758; &#xC704;&#xD5D8;&#xC744; &#xC904;&#xC5EC;&#xC90D;&#xB2C8;&#xB2E4;.</li>
+<li>&#xADDC;&#xC81C;&#xB97C; &#xC704;&#xD55C; &#xB4DC;&#xB86D;&#xC544;&#xC6C3;&#xACFC; &#xD074;&#xB798;&#xC2A4; &#xD655;&#xB960; &#xCD94;&#xC815; &#xAC12;&#xC744; &#xCD9C;&#xB825;&#xD558;&#xAE30; &#xC704;&#xD55C; &#xC18C;&#xD504;&#xD2B8;&#xB9E5;&#xC2A4; &#xD65C;&#xC131;&#xD654; &#xD568;&#xC218;&#xB97C; &#xC801;&#xC6A9;&#xD55C; &#xC644;&#xC804; &#xC5F0;&#xACB0; &#xCE35;&#xC785;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<h3 class="mume-header" id="googlenet-%EA%B5%AC%EC%A1%B0-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0">GoogLeNet &#xAD6C;&#xC870; &#xAD6C;&#xC131;&#xD558;&#xAE30;</h3>
+
+<pre data-role="codeBlock" data-info class="language-"><code>reset_graph()
+
+X_image = tf.placeholder(&quot;float&quot;, shape=[None, 214, 214, 3])
+y = tf.placeholder(&quot;float&quot;, shape=[None, 2])
+</code></pre><p>&#xAC00;&#xC911;&#xCE58;&#xB97C; &#xD45C;&#xC900;&#xD3B8;&#xCC28; 0.1&#xC744; &#xAC16;&#xB294; &#xB09C;&#xC218;&#xB85C; &#xCD08;&#xAE30;&#xD654;&#xD558;&#xB294; &#xD568;&#xC218;&#xC640; &#xBC14;&#xC774;&#xC5B4;&#xC2A4;&#xB97C; 0.1&#xB85C; &#xCD08;&#xAE30;&#xD654;&#xD558;&#xB294; &#xD568;&#xC218;&#xB97C; &#xC815;&#xC758;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>def weight_variable(shape):
+    initial = tf.truncated_normal(shape, stddev=0.1)
+    return tf.Variable(initial)
+
+def bias_variable(shape):
+    initial = tf.constant(0.1, shape=shape)
+    return tf.Variable(initial)
+</code></pre><p>stride&#xB294; 1&#xB85C; &#xD558;&#xACE0; &#xD328;&#xB529;&#xC740; 0&#xC73C;&#xB85C; &#xD558;&#xB294; &#xD569;&#xC131;&#xACF1;&#xCE35;&#xC744; &#xB9CC;&#xB4DC;&#xB294; &#xD568;&#xC218;&#xC640; 2 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#xD7;</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#xD7;</span></span></span></span> 2 &#xCD5C;&#xB300; &#xD480;&#xB9C1; &#xB808;&#xC774;&#xC5B4;&#xC640; &#xD3C9;&#xADE0; &#xD480;&#xB9C1; &#xB808;&#xC774;&#xC5B4;&#xB97C; &#xC704;&#xD55C; &#xD568;&#xC218;&#xB97C; &#xC815;&#xC758;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>def conv2d(x, W, strides=[1,1,1,1], padding=&quot;SAME&quot;):
+    return tf.nn.conv2d(x, W, strides=strides, padding=padding)
+
+def max_pool_3x3(x, padding=&quot;SAME&quot;):
+    return tf.nn.max_pool(x, ksize=[1,3,3,1], strides=[1,2,2,1], padding=padding)
+
+def avg_pool_7x7(x, padding=&quot;VALID&quot;):
+    return tf.nn.avg_pool(x, ksize=[1,7,7,1], strides=[1,1,1,1], padding=padding)
+</code></pre><p>&#xCCAB; &#xBC88;&#xC9F8; &#xD569;&#xC131;&#xACF1;&#xCE35;&#xC744; &#xB9CC;&#xB4E4;&#xAE30; &#xC704;&#xD574; &#xAC00;&#xC911;&#xCE58;&#xC640; &#xBC14;&#xC774;&#xC5B4;&#xC2A4; &#xD150;&#xC11C;&#xB97C; &#xB9CC;&#xB4E4;&#xACE0;, &#xD65C;&#xC131;&#xD654;&#xD568;&#xC218;&#xB294; ReLU &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0; &#xD569;&#xC131;&#xACF1;&#xCE35; &#xB4A4;&#xC5D0; &#xCD5C;&#xB300; &#xD480;&#xB9C1;&#xCE35;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>W_conv1 = weight_variable([7,7,3,64]) ## &#xC218;&#xC6A9;&#xC7A5; &#xB108;&#xBE44;, &#xC218;&#xC6A9;&#xC7A5; &#xB192;&#xC774;, &#xCEEC;&#xB7EC;, &#xD2B9;&#xC131; &#xB9F5; &#xAC1C;&#xC218;
+b_conv1 = bias_variable([64])
+
+h_conv1 = tf.nn.relu(conv2d(X_image, W_conv1, strides=[1,2,2,1]) + b_conv1)
+
+h_pool1 = max_pool_3x3(h_conv1)
+
+lrn_conv1 = tf.nn.lrn(h_pool1, depth_radius=2, bias=1,
+                          alpha=0.00002, beta=0.75)
+</code></pre><p>&#xB450; &#xBC88;&#xC9F8; &#xD569;&#xC131;&#xACF1;&#xCE35;&#xACFC; &#xC138; &#xBC88;&#xC9F8; &#xD569;&#xC131;&#xACF1;&#xCE35;&#xC744; &#xB9CC;&#xB4E4;&#xAE30; &#xC704;&#xD574; &#xAC00;&#xC911;&#xCE58;&#xC640; &#xBC14;&#xC774;&#xC5B4;&#xC2A4; &#xD150;&#xC11C;&#xB97C; &#xB9CC;&#xB4E4;&#xACE0;, &#xD65C;&#xC131;&#xD654;&#xD568;&#xC218;&#xB294; ReLU &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0; &#xD569;&#xC131;&#xACF1;&#xCE35; &#xB4A4;&#xC5D0; &#xC815;&#xADDC;&#xD654; &#xD568;&#xC218;&#xB97C; &#xCD94;&#xAC00;&#xD55C; &#xD6C4; &#xCD5C;&#xB300; &#xD480;&#xB9C1;&#xCE35;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>b_conv2 = bias_variable([64])
+
+h_conv2 = tf.nn.relu(conv2d(lrn_conv1, W_conv2, strides=[1,1,1,1]) + b_conv2)
+
+W_conv3 = weight_variable([3,3,64,192]) ## &#xC218;&#xC6A9;&#xC7A5; &#xB108;&#xBE44;, &#xC218;&#xC6A9;&#xC7A5; &#xB192;&#xC774;, &#xCEEC;&#xB7EC;, &#xD2B9;&#xC131; &#xB9F5; &#xAC1C;&#xC218;
+b_conv3 = bias_variable([192])
+
+h_conv3 = tf.nn.relu(conv2d(h_conv2, W_conv3, strides=[1,1,1,1]) + b_conv3)
+
+lrn_conv2 = tf.nn.lrn(h_conv3, depth_radius=2, bias=1,
+                          alpha=0.00002, beta=0.75)
+
+h_pool2 = max_pool_3x3(lrn_conv2)
+</code></pre><p>&#xC774;&#xC81C; &#xC778;&#xC149;&#xC158; &#xBAA8;&#xB4C8;&#xC744; &#xB9CC;&#xB4E4;&#xC5B4;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC778;&#xC149;&#xC158; &#xBAA8;&#xB4C8;&#xC744; &#xD3B8;&#xD558;&#xAC8C; &#xC0AC;&#xC6A9;&#xD558;&#xAE30;&#xC704;&#xD574; &#xD568;&#xC218;&#xB85C; &#xB9CC;&#xB4E4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>def inception(x, in_channels, filter_count):
+    # 1x1 1
+    W_incep1  = weight_variable([1,1,in_channels, filter_count[0]])
+    b_incep1 = bias_variable([filter_count[0]])
+    one_by_one1 = tf.nn.relu(conv2d(x, W_incep1, strides=[1,1,1,1]) + b_incep1)
+
+    # 1x1 2, 3x3
+    W_incep2  = weight_variable([1,1,in_channels, filter_count[1]])
+    b_incep2 = bias_variable([filter_count[1]])
+    one_by_one2 = tf.nn.relu(conv2d(x, W_incep2, strides=[1,1,1,1]) + b_incep2)
+
+    W_incep3x3  = weight_variable([3,3,filter_count[1], filter_count[2]])
+    b_incep3x3 = bias_variable([filter_count[2]])
+    three_by_three = tf.nn.relu(conv2d(one_by_one2,
+            W_incep3x3, strides=[1,1,1,1]) + b_incep3x3)
+
+    # 1x1 3, 5x5
+    W_incep3  = weight_variable([1,1,in_channels, filter_count[3]])
+    b_incep3 = bias_variable([filter_count[3]])
+    one_by_one3 = tf.nn.relu(conv2d(x, W_incep3, strides=[1,1,1,1]) + b_incep3)
+
+    W_incep5x5  = weight_variable([5,5,filter_count[3], filter_count[4]])
+    b_incep5x5 = bias_variable([filter_count[4]])
+    five_by_five = tf.nn.relu(conv2d(one_by_one3,
+            W_incep5x5, strides=[1,1,1,1]) + b_incep5x5)
+
+    # max pool, 1x1 4
+    max_pool = tf.nn.max_pool(x, ksize=[1,3,3,1], strides=[1,1,1,1], padding=&apos;SAME&apos;)
+
+    W_incep4  = weight_variable([1,1,in_channels, filter_count[5]])
+    b_incep4 = bias_variable([filter_count[5]])
+    one_by_one4 = tf.nn.relu(conv2d(max_pool, W_incep4, strides=[1,1,1,1]) + b_incep4)
+
+    ## concat
+    x = tf.concat([one_by_one1, three_by_three, five_by_five, one_by_one4], axis=3)
+
+    return tf.nn.relu(x)
+</code></pre><p>1,2 &#xBC88;&#xC9F8; &#xC778;&#xC149;&#xC158; &#xBAA8;&#xB4C8;&#xC744; &#xB9CC;&#xB4E4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0; &#xCD5C;&#xB300; &#xD480;&#xB9C1;&#xCE35;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>h_incep1 = inception(h_pool2, in_channels=192, filter_count=[64,96,128,16,32,32])
+h_incep2 = inception(h_incep1, in_channels=64+128+32+32,
+    filter_count=[128,128,192,32,96,64])
+
+h_pool3 = max_pool_3x3(h_incep2)
+h_pool3.get_shape()
+</code></pre><pre data-role="codeBlock" data-info class="language-"><code>  ## &#xACB0;&#xACFC;
+TensorShape([Dimension(None), Dimension(14), Dimension(14), Dimension(480)])
+</code></pre><p>3,4,5,6,7 &#xBC88;&#xC9F8; &#xC778;&#xC149;&#xC158; &#xBAA8;&#xB4C8;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0; &#xCD5C;&#xB300; &#xD480;&#xB9C1;&#xCE35;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>h_incep3 = inception(h_pool3, in_channels=480,
+      filter_count=[192,96,208,16,48,64])
+h_incep4 = inception(h_incep3, in_channels=192+208+48+64,
+    filter_count=[160,112,224,24,64,64])
+h_incep5 = inception(h_incep4, in_channels=160+224+64+64,
+    filter_count=[128,128,256,24,64,64])
+h_incep6 = inception(h_incep5, in_channels=128+256+64+64,   
+    filter_count=[112,144,288,32,64,64])
+h_incep7 = inception(h_incep6, in_channels=112+288+64+64,
+    filter_count=[256,160,320,32,128,128])
+
+h_pool4 = max_pool_3x3(h_incep7)
+h_pool4.get_shape()
+</code></pre><pre data-role="codeBlock" data-info class="language-"><code>  ## &#xACB0;&#xACFC;
+TensorShape([Dimension(None), Dimension(7), Dimension(7), Dimension(832)])
+</code></pre><p>8, 9 &#xBC88;&#xC9F8; &#xC778;&#xC149;&#xC158; &#xBAA8;&#xB4C8;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0; &#xD3C9;&#xADE0; &#xD480;&#xB9C1;&#xCE35;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>h_incep8 = inception(h_pool4, in_channels=832, filter_count=[256,160,320,32,128,128])
+h_incep9 = inception(h_incep8, in_channels=256+320+128+128,
+    filter_count=[384,192,384,48,128,128])
+
+h_pool5 = avg_pool_7x7(h_incep9)
+h_pool5.get_shape()
+</code></pre><pre data-role="codeBlock" data-info class="language-"><code>  ## &#xACB0;&#xACFC;
+TensorShape([Dimension(None), Dimension(1), Dimension(1), Dimension(1024)])
+</code></pre><p>&#xB4DC;&#xB78D;&#xC544;&#xC6C3; &#xCE35;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>keep_prob = tf.placeholder(&quot;float&quot;)
+h_fc1_drop = tf.nn.dropout(h_pool5, keep_prob)
+</code></pre><p>&#xC644;&#xC804; &#xC5F0;&#xACB0;&#xCE35;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>W_fc1 = weight_variable([1 * 1 * 1024, 1000])
+b_fc1 = bias_variable([1000])
+
+h_fc1_drop_flat = tf.reshape(h_fc1_drop, [-1, 1 * 1 * 1024])
+h_fc1 = tf.nn.relu(tf.matmul(h_fc1_drop_flat, W_fc1) + b_fc1)
+</code></pre><p>softmax&#xCE35;&#xACFC; &#xC5F0;&#xACB0;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>W_fc2 = weight_variable([1000, 2])
+b_fc2 = bias_variable([2])
+
+k = tf.matmul(h_fc1, W_fc2) + b_fc2
+y_conv = tf.nn.softmax(k)
+</code></pre><p>&#xC190;&#xC2E4;&#xD568;&#xC218;&#xB294; cross entropy&#xB85C; &#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>xentropy = tf.nn.softmax_cross_entropy_with_logits(
+        labels=y, logits=k)
+loss = tf.reduce_mean(xentropy, name=&quot;loss&quot;)
+</code></pre><p>&#xB7EC;&#xB2DD; &#xC54C;&#xACE0;&#xB9AC;&#xC998;&#xC744; &#xC815;&#xC758;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>optimizer = tf.train.AdamOptimizer(learning_rate=0.001)
+train_step = optimizer.minimize(loss)
+</code></pre><p>&#xC774;&#xC81C; &#xC815;&#xD655;&#xB3C4; &#xD568;&#xC218;&#xB97C; &#xC815;&#xC758;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>correct_prediction = tf.equal(tf.argmax(y_conv, 1), tf.argmax(y, 1))
+accuracy = tf.reduce_mean(tf.cast(correct_prediction, &quot;float&quot;))
+</code></pre><p>&#xC774;&#xC81C; &#xC2E0;&#xACBD;&#xB9DD;&#xC744; &#xD6C8;&#xB828;&#xC2DC;&#xCF1C;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>def shuffle_batch(X, y, batch_size):
+    rnd_idx = np.random.permutation(len(X))
+    n_batches = len(X) // batch_size
+    for batch_idx in np.array_split(rnd_idx, n_batches):
+        X_batch, y_batch = X[batch_idx], y[batch_idx]
+        yield X_batch, y_batch
+</code></pre><pre data-role="codeBlock" data-info class="language-"><code>init = tf.global_variables_initializer()
+saver = tf.train.Saver()
+
+n_epochs = 300
+batch_size = 256
+
+with tf.Session() as sess:
+    init.run()
+
+    for epoch in range(n_epochs):
+        for X_batch, y_batch in shuffle_batch(train_data, labels, batch_size):
+            sess.run(train_step, feed_dict={X_image: X_batch, y: y_batch, keep_prob: 0.4})
+        if epoch % 10 == 0:
+            acc_batch = accuracy.eval(feed_dict={X_image: train,
+                y: train_labels, keep_prob: 0.4})
+            print(num, &quot;&#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;:&quot;, acc_batch)
+    save_path = saver.save(sess, &quot;./cnn_googlenet.ckpt&quot;)
+</code></pre><pre data-role="codeBlock" data-info class="language-"><code>  ## &#xACB0;&#xACFC;
+  epoch 0 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.518797
+  epoch 10 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.5150376
+  epoch 20 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.52255636
+  epoch 30 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.52255636
+  epoch 40 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.575188
+  epoch 50 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.575188
+  epoch 60 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.8120301
+  epoch 70 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.83082706
+  epoch 80 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.90225565
+  epoch 90 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.9398496
+  epoch 100 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.65037596
+  epoch 110 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.7443609
+  epoch 120 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.9511278
+  epoch 130 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.55263156
+  epoch 140 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.9736842
+  epoch 150 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 1.0
+  epoch 160 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 1.0
+  epoch 170 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.5338346
+  epoch 180 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.5864662
+  epoch 190 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.56766915
+  epoch 200 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.7105263
+  epoch 210 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.5451128
+  epoch 220 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.64285713
+  epoch 230 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.63909775
+  epoch 240 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.7443609
+  epoch 250 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.6052632
+  epoch 260 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.7180451
+  epoch 270 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.58270675
+  epoch 280 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.7368421
+  epoch 290 &#xC778; &#xB370;&#xC774;&#xD130; &#xC815;&#xD655;&#xB3C4;: 0.6766917
+</code></pre><pre data-role="codeBlock" data-info class="language-"><code>with tf.Session() as sess:
+    saver.restore(sess, &apos;./cnn_googlenet.ckpt&apos;)
+    print(&apos;test accuracy %g&apos; % sess.run(accuracy,feed_dict={X_image: test,
+        y:test_labels, keep_prob: 1.}))
+</code></pre><pre data-role="codeBlock" data-info class="language-"><code>  ## &#xACB0;&#xACFC;
+test accuracy 0.65
+</code></pre><p>&#xC911;&#xAC04;&#xC5D0; colab&#xC758; &#xB7F0;&#xD0C0;&#xC784;&#xC774; &#xB04A;&#xACBC;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;. &#xADF8;&#xB798;&#xB3C4; 160 &#xC5D0;&#xD3EC;&#xD06C; &#xC815;&#xB3C4;&#xC5D0;&#xC11C;&#xB294; &#xC815;&#xD655;&#xB3C4;&#xAC00; 1&#xAE4C;&#xC9C0; &#xC62C;&#xB77C;&#xAC14;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h2 class="mume-header" id="%EA%B0%9C%EC%84%A0-%EB%B0%A9%ED%96%A5">&#xAC1C;&#xC120; &#xBC29;&#xD5A5;</h2>
+
+<ol>
+<li>AlexNet&#xACFC; GoogLeNet&#xC744; &#xC2E4;&#xD589;&#xD560; &#xB54C; &#xD558;&#xB4DC;&#xC6E8;&#xC5B4;&#xC758; &#xD55C;&#xACC4;&#xAC00; &#xB9CE;&#xC774; &#xC788;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xBBF8;&#xC9C0; &#xB370;&#xC774;&#xD130;&#xB97C; 2000&#xAC1C;&#xC640; &#xBC30;&#xCE58; &#xC0AC;&#xC774;&#xC988;&#xAC00; 25&#xB97C; &#xB118;&#xAE30;&#xC5D4; &#xC218;&#xC6A9;&#xD558;&#xAE30;&#xC5D0; RAM&#xC774; &#xB9CE;&#xC774; &#xD798;&#xB4E4;&#xC5B4;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ol>
+<ul>
+<li>&#xB2E4;&#xD589;&#xD788;&#xB3C4; Colaboratory&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC11C; &#xB525;&#xB7EC;&#xB2DD;&#xC744; &#xB3CC;&#xB9B4; &#xC218;&#xB294; &#xC788;&#xC5C8;&#xC9C0;&#xB9CC;, &#xD070; &#xB370;&#xC774;&#xD130;&#xB97C; &#xB3CC;&#xB9AC;&#xAE30;&#xC5D0;&#xB294; &#xAD6C;&#xAE00;&#xC5D0;&#xC11C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xB7A8;&#xC758; &#xD06C;&#xAE30;&#xAC00; &#xCDA9;&#xBD84;&#xD558;&#xC9C0; &#xC54A;&#xC558;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<ol start="2">
+<li>&#xC774;&#xBBF8;&#xC9C0; &#xC0AC;&#xC774;&#xC988;&#xB97C; &#xC870;&#xC808;&#xD558;&#xB294; &#xACFC;&#xC815;&#xC744; &#xC138;&#xC138;&#xD558;&#xAC8C; &#xD558;&#xC9C0; &#xBABB;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xBBF8;&#xC9C0;&#xC758; &#xD06C;&#xAE30;&#xB97C; 500&#xC73C;&#xB85C; &#xB9DE;&#xCD94;&#xACE0; 214&#xB85C; &#xC904;&#xC774;&#xB294; &#xACFC;&#xC815;&#xC5D0;&#xC11C; 214&#xBCF4;&#xB2E4; &#xC791;&#xC740; &#xC774;&#xBBF8;&#xC9C0;&#xB4E4;&#xC740; &#xCEE4;&#xC84C;&#xB2E4; &#xC791;&#xC544;&#xC838;&#xC11C; &#xC774;&#xBBF8;&#xC9C0; &#xC190;&#xC2E4;&#xC774; &#xC788;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ol>
+<ul>
+<li>&#xC774;&#xBBF8;&#xC9C0; &#xC804;&#xCC98;&#xB9AC;&#xB97C; &#xCC98;&#xC74C; &#xC2DC;&#xB3C4;&#xBD24;&#xC2B5;&#xB2C8;&#xB2E4;. &#xADF8;&#xB798;&#xC11C; &#xC774;&#xB7F0; &#xC77C;&#xC774; &#xC77C;&#xC5B4;&#xB0A0; &#xAC83;&#xC774;&#xB77C;&#xACE0; &#xC608;&#xC0C1;&#xD558;&#xC9C0; &#xBABB;&#xD558;&#xACE0; &#xC804;&#xCC98;&#xB9AC;&#xB97C; &#xD558;&#xC600;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB2E4;&#xC74C;&#xC5D0;&#xB294; &#xCD5C;&#xC885; &#xD53D;&#xC140;&#xC744; &#xAE30;&#xC900;&#xC73C;&#xB85C; &#xB370;&#xC774;&#xD130;&#xC14B;&#xC744; &#xBD84;&#xB9AC;&#xD55C; &#xD6C4; &#xCC98;&#xB9AC;&#xD574;&#xC57C;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<ol start="3">
+<li>&#xD150;&#xC11C;&#xBCF4;&#xB4DC;&#xB97C; &#xD65C;&#xC6A9;&#xD558;&#xC9C0; &#xBABB;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;. &#xBCC0;&#xC218;&#xB4E4;&#xC744; &#xCEA1;&#xC290;&#xD654;&#xD558;&#xC9C0; &#xBABB;&#xD574;&#xC11C; &#xD150;&#xC11C;&#xBCF4;&#xB4DC;&#xAC00; &#xC9C1;&#xAD00;&#xC801;&#xC774;&#xC9C0; &#xBABB;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ol>
+<ul>
+<li>tf.variable_scope&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC11C; &#xBCC0;&#xC218;&#xB4E4;&#xC744; &#xCEA1;&#xC290;&#xD654;&#xD574;&#xC57C;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<ol start="4">
+<li>&#xD2B9;&#xC131;&#xB9F5;&#xC744; &#xC804;&#xBD80; &#xB2E4; &#xC5F0;&#xACB0;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC544;&#xB2C8;&#xB77C; 3&#xAC1C; &#xB610;&#xB294; 4&#xAC1C; &#xB9F5;&#xB9CC; &#xC5F0;&#xACB0;&#xD558;&#xB294; &#xAC83;&#xC744; &#xAD6C;&#xD604;&#xD558;&#xC9C0; &#xBABB;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ol>
+<ul>
+<li>&#xC778;&#xD130;&#xB137;&#xC744; &#xB354; &#xCC3E;&#xC544;&#xBD10;&#xC11C; &#xAD6C;&#xD604;&#xD558;&#xB294; &#xBC29;&#xC2DD;&#xC744; &#xC775;&#xD600;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;.</li>
+</ul>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
